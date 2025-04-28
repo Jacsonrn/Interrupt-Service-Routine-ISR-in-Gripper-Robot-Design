@@ -1,0 +1,8 @@
+[project]
+name = "Gripper Robot Simulation"
+
+[firmware]
+file = ".pio/build/esp32dev/firmware.elf"
+
+[simulator]
+board = "esp32-devkit-v1"

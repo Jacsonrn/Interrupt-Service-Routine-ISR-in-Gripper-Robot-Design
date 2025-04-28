@@ -1,0 +1,66 @@
+{
+    "version": 1,
+    "author": "Jacson Arruda Ribeiro(UFRN)",
+    "editor": "wokwi/VSCODE",
+    "parts": [
+      {
+        "type": "board-esp32-devkit-c-v4",
+        "id": "esp",
+        "top": -134.4,
+        "left": -167.96,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn1",
+        "top": 265.4,
+        "left": -153.6,
+        "attrs": { "color": "yellow", "label": "POSIÇÃO 3" }
+      },
+      {
+        "type": "wokwi-servo",
+        "id": "servo1",
+        "top": -145,
+        "left": 69,
+        "rotate": 270,
+        "attrs": { "hornColor": "black" }
+      },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn2",
+        "top": 198.2,
+        "left": -153.6,
+        "attrs": { "color": "blue", "label": "POSIÇÃO 2" }
+      },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn3",
+        "top": 131,
+        "left": -153.6,
+        "attrs": { "color": "green", "xray": "1", "label": "POSIÇÃO 1" }
+      },
+      {
+        "type": "wokwi-lcd1602",
+        "id": "lcd2",
+        "top": -272,
+        "left": -263.2,
+        "attrs": { "pins": "i2c" }
+      }
+    ],
+    "connections": [
+      [ "esp:35", "btn2:1.l", "blue", [ "h-28.65", "v249.6" ] ],
+      [ "btn2:2.r", "esp:GND.2", "black", [ "h55.1", "v-333.3" ] ],
+      [ "btn1:1.l", "esp:34", "gold", [ "h-57.6", "v-86.4" ] ],
+      [ "btn1:2.r", "esp:GND.2", "black", [ "h67.4", "v-403" ] ],
+      [ "btn3:1.l", "esp:32", "green", [ "h-28.8", "v-192" ] ],
+      [ "btn3:2.r", "esp:GND.2", "black", [ "h48.2", "v-268.6" ] ],
+      [ "servo1:GND", "esp:GND.2", "black", [ "v28.8", "h-115.2", "v-134.4" ] ],
+      [ "servo1:V+", "esp:5V", "red", [ "v96", "h-278.3" ] ],
+      [ "servo1:PWM", "esp:2", "violet", [ "v38.4", "h-172.6", "v-9.6" ] ],
+      [ "esp:5V", "lcd2:VCC", "red", [ "h-172.65", "v-297.6" ] ],
+      [ "esp:GND.2", "lcd2:GND", "black", [ "v0", "h124.8", "v-192", "h-393.6", "v57.6", "h76.8" ] ],
+      [ "esp:21", "lcd2:SDA", "green", [ "h153.6", "v-259.2", "h-460.8", "v96" ] ],
+      [ "esp:22", "lcd2:SCL", "green", [ "h144", "v-220.8", "h-364.8", "v96" ] ]
+    ],
+    "dependencies": {}
+  }
